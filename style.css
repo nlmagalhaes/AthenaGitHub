@@ -6,44 +6,58 @@
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Header */
+/* Para garantir que o footer fique no fim da tela */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER */
 header {
+  background-color: #8B0000; /* vermelho escuro elegante (Dark Red) */
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
-  background: #fff;
-  border-bottom: 1px solid #eee;
+  padding: 15px 40px;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.logo {
-  font-size: 20px;
+header .logo {
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #444;
+  color: white; /* garante que o logo fique branco */
 }
 
-nav ul {
+header nav ul {
   list-style: none;
   display: flex;
   gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
-nav ul li a {
+header nav ul li a {
+  color: white; /* links brancos */
   text-decoration: none;
-  color: #444;
   font-weight: 500;
+  transition: color 0.3s;
 }
 
-nav ul li a:hover {
-  color: #c19a6b;
+header nav ul li a:hover {
+  color: #FFD700; /* dourado no hover (dá um contraste elegante) */
 }
 
 /* Hero */
 .hero {
-  background: url("images/banner.jpg") center/cover no-repeat;
+  background: url("images/hero-bg.jpg") center/cover no-repeat;
   height: 60vh;
   display: flex;
   justify-content: center;
@@ -115,15 +129,29 @@ nav ul li a:hover {
   color: #333;
 }
 
+.data-expo {
+  font-size: 0.9rem; /* controla o tamanho do "até xx de ..." */
+  color: #555;
+  font-style: italic;
+}
+
 .card:hover {
   transform: translateY(-8px);
 }
 
+
+
+/* Main container para páginas internas (como doações) */
+main.container {
+  flex: 1; /* ocupa espaço restante e empurra o footer */
+}
+
 /* Footer */
 footer {
-  background: #222;
+  background: #8B0000;
   color: #fff;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
+  font-size: 1.0rem;
+  margin-top: auto; /* cola no fim */
 }
